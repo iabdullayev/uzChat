@@ -13,11 +13,6 @@ class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     
     let friendImageView = UIImageView()
     
-    func configure(with value: MChat) {
-        friendImageView.image = UIImage(named: value.userImageString)
-    }
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .yellow
@@ -26,6 +21,12 @@ class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
         self.clipsToBounds = true
         setupConstraints()
     }
+    
+    func configure<U>(with value: U) where U: Hashable {
+        guard let chat: MChat = value as? MChat else { return }
+        friendImageView.image = UIImage(named: chat.userImageString)
+    }
+    
     
     private func setupConstraints() {
         friendImageView.translatesAutoresizingMaskIntoConstraints = false

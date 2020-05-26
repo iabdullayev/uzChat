@@ -49,7 +49,7 @@ class ListViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
     }
-    
+    //MARK: - Collection View
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -60,7 +60,7 @@ class ListViewController: UIViewController {
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseId)
         collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseId)
     }
-    
+    //MARK: - Reload Data
     private func reloadData() {
            var snapshot = NSDiffableDataSourceSnapshot<Section, MChat>()
            snapshot.appendSections([.waitingChats, .activeChats])
@@ -73,12 +73,7 @@ class ListViewController: UIViewController {
 //MARK: - Create Data Source
 extension ListViewController {
     
-    private func configure<T: SelfConfiguringCell>(cellType: T.Type, with value: MChat, for indexPath: IndexPath) -> T {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else { fatalError("Unable to dequeue \(cellType)") }
-        cell.configure(with: value)
-        return cell
-    }
-    
+ //MARK: - Data Source
     private func createDataSource() {
             dataSource = UICollectionViewDiffableDataSource<Section, MChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
             guard let section = Section(rawValue: indexPath.section) else {
@@ -87,9 +82,9 @@ extension ListViewController {
             
             switch section {
             case .activeChats:
-                return self.configure(cellType: ActiveChatCell.self, with: chat, for: indexPath)
+                return self.configure(collectionView: collectionView, cellType: ActiveChatCell.self, with: chat, for: indexPath)
             case .waitingChats:
-                return self.configure(cellType: WaitingChatCell.self, with: chat, for: indexPath)
+                return self.configure(collectionView: collectionView, cellType: WaitingChatCell.self, with: chat, for: indexPath)
             }
         })
         
@@ -104,15 +99,12 @@ extension ListViewController {
             return sectionHeader
         }
     }
-    
-   
-    
 }
 
 //MARK: - Create Layout
 
 extension ListViewController{
-    
+    //MARK: - Compositional Layout
     private func createCompositionalLayout() -> UICollectionViewLayout {
         
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in

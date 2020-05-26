@@ -46,7 +46,7 @@ class PeopleViewController: UIViewController {
         
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellid")
+        collectionView.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reuseId)
         
     }
     
@@ -126,9 +126,7 @@ extension PeopleViewController {
             
             switch section {
             case .users:
-                let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
-                cell.backgroundColor = .systemBlue
-                return cell
+                return self.configure(collectionView: self.collectionView, cellType: UserCell.self, with: user, for: indexPath)
             }
         })
         
@@ -140,7 +138,8 @@ extension PeopleViewController {
                 fatalError("Unknown section kind")
             }
             let items = self.dataSource.snapshot().itemIdentifiers(inSection: .users)
-            sectionHeader.configure(text: section.description(usersCount: items.count),                     font: .systemFont(ofSize: 36, weight: .light),                           textColor: .label)
+            sectionHeader.configure(text: section.description(usersCount: items.count),                     font: .systemFont(ofSize: 36, weight: .light),                           
+                                    textColor: .label)
             return sectionHeader
         }
     }
