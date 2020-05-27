@@ -38,8 +38,13 @@ class LoginViewController: UIViewController {
         googleButton.customizeGoogleButton()
         setupConstraints()
         view.backgroundColor = .white
+        
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
 
+    @objc private func loginButtonTapped() {
+        print(#function)
+    }
 }
 
 //MARK: - Setup Constraints
