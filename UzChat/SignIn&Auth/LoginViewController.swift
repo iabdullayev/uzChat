@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class LoginViewController: UIViewController {
     
     let welcomeLabel = UILabel(text: "Welcome Back!", font: .avenir26())
@@ -31,22 +33,38 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    weak var delegate: AuthNavigatingDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         googleButton.customizeGoogleButton()
         setupConstraints()
         view.backgroundColor = .white
         
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
     }
 
     @objc private func loginButtonTapped() {
-        print(#function)
+        AuthService.shared.login(email: emailTextField.text!, password: passwordTextField.text!) { (result) in
+            switch result {
+            case .success(_):
+                self.showAlert(with: "Success", and: "You've been authorized") {
+                    self.present(MainTabBarController(), animated: true, completion: nil)
+                }
+            case .failure(let error):
+                self.showAlert(with: "Error!", and: error.localizedDescription)
+            }
+        }
+    }
+    
+    @objc private func signUpButtonTapped() {
+        dismiss(animated: true) {
+            self.delegate?.toSignUpVC()
+        }
     }
 }
-
 //MARK: - Setup Constraints
 
 extension LoginViewController {
@@ -91,7 +109,7 @@ extension LoginViewController {
         ])
         
         NSLayoutConstraint.activate([
-            bottomStackView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 60),
+            bottomStackView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20),
             bottomStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])

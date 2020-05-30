@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SetupProfileViewController: UIViewController {
     
     let welcomeLabel = UILabel(text: "Setup profile", font: .avenir26())
+    let fullImageView = AddPhotoView()
     
     let fullNameLabel = UILabel(text: "Full Name")
     let aboutmeLabel = UILabel(text: "About me")
@@ -18,11 +20,19 @@ class SetupProfileViewController: UIViewController {
     
     let fullNameTextField = OneLineTextField(font: .avenir20())
     let aboutMeTextField = OneLineTextField(font: .avenir20())
-    let sexSegmentedControl = UISegmentedControl(first: "Male", second: "Female")
+    let genderSegmentedControl = UISegmentedControl(first: "Male", second: "Female")
     
     let goToChatsButton = UIButton(title: "Go to chats!", titleColor: .white, backgroundColor: .buttonDark(), cornerRadius: 4)
     
-    let fullImageView = AddPhotoView()
+    private let currentUser: User
+    init(currentUser: User) {
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     override func viewDidLoad() {
@@ -30,6 +40,26 @@ class SetupProfileViewController: UIViewController {
         
         view.backgroundColor = .white
         setupConstraints()
+        goToChatsButton.addTarget(self, action: #selector(goToChatsButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func goToChatsButtonTapped() {
+        FirestoreService.shared.saveProfileWith(
+            id: currentUser.uid,
+            email: currentUser.email!,
+            username: fullNameTextField.text,
+            avatarImageString: "nil",
+            description: aboutMeTextField.text,
+            gender: genderSegmentedControl.titleForSegment(at: genderSegmentedControl.selectedSegmentIndex)) {
+                (result) in
+                switch result {
+                    
+                case .success(let muser):
+                    self.showAlert(with: "Success", and: "Happy Chatting!")
+                case .failure(let error):
+                    self.showAlert(with: "Error", and: error.localizedDescription)
+                }
+        }
     }
 }
 
@@ -48,9 +78,9 @@ extension SetupProfileViewController {
              aboutMeTextField],
              axis: .vertical,
              spacing: 0)
-        let sexStackView = UIStackView(arrangedSubviews:
+        let genderStackView = UIStackView(arrangedSubviews:
             [sexLabel,
-             sexSegmentedControl],
+             genderSegmentedControl],
              axis: .vertical,
              spacing: 12)
         
@@ -58,7 +88,7 @@ extension SetupProfileViewController {
         let stackView = UIStackView(arrangedSubviews:
             [fullNameStackView,
              aboutMeStackView,
-             sexStackView,
+             genderStackView,
              goToChatsButton],
              axis: .vertical,
              spacing: 40)
@@ -100,7 +130,7 @@ struct SetupProfileVCProvider: PreviewProvider {
     }
     
     struct ContainerView: UIViewControllerRepresentable {
-        let setupProfileVC = SetupProfileViewController()
+        let setupProfileVC = SetupProfileViewController(currentUser: Auth.auth().currentUser!)
         
         func makeUIViewController(context: UIViewControllerRepresentableContext<SetupProfileVCProvider.ContainerView>) -> SetupProfileViewController {
             return setupProfileVC
