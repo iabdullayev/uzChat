@@ -12,7 +12,12 @@ class MainTabBarController: UITabBarController {
     
     private let currentUser: MUser
     
-    init(currentUser: MUser) {
+    init(currentUser: MUser = MUser(username: "uuu",
+                                    email: "jj",
+                                    avatarStringURL: "jj",
+                                    description: "kk",
+                                    gender: "kkk",
+                                    id: "jjj")) {
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
     }
@@ -24,8 +29,8 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let listViewController = ListViewController()
-        let peopleViewController = PeopleViewController()
+        let listViewController = ListViewController(currentUser: currentUser)
+        let peopleViewController = PeopleViewController(currentUser: currentUser)
         
         tabBar.tintColor = #colorLiteral(red: 0.5568627451, green: 0.3529411765, blue: 0.968627451, alpha: 1)
         let boldConfig = UIImage.SymbolConfiguration(weight: .medium)
