@@ -34,22 +34,36 @@ class FirestoreService {
         }
     }
     
-    func saveProfileWith(id: String, email: String, username: String?, avatarImageString: String?, description: String?, gender: String?, completion: @escaping (Result<MUser, Error>) -> Void) {
+    func saveProfileWith(id: String, email: String, username: String?, avatarImage: UIImage?, description: String?, gender: String?, completion: @escaping (Result<MUser, Error>) -> Void) {
         
         guard Validators.isFilled(username: username, description: description, gender: gender) else {
             completion(.failure(UserError.notFilled))
             return
         }
         
-        let muser = MUser(username: username!, email: email, avatarStringURL: "doesn't exist", description: description!, gender: gender!, id: id)
+        guard avatarImage != #imageLiteral(resourceName: "avatar") else {
+            completion(.failure(UserError.photoNotExist))
+            return
+        }
         
-        self.usersRef.document(muser.id).setData(muser.representation) {
-            (error) in
-            if let error = error {
+        var muser = MUser(username: username!, email: email, avatarStringURL: "doesn't exist", description: description!, gender: gender!, id: id)
+        StorageService.shared.upload(photo: avatarImage!) { (result) in
+            switch result {
+                
+            case .success(let url):
+                muser.avatarStringURL = url.absoluteString
+                self.usersRef.document(muser.id).setData(muser.representation) { (error) in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
+                        completion(.success(muser))
+                    }
+                }
+            case .failure(let error):
                 completion(.failure(error))
-            } else {
-                completion(.success(muser))
             }
         }
+        
+        
     }
 }

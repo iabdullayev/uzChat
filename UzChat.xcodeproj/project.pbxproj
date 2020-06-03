@@ -30,9 +30,6 @@
 		5A977F10247B29A50033E281 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A977F0F247B29A50033E281 /* WaitingChatCell.swift */; };
 		5A977F12247B2A9E0033E281 /* SelfConfigureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A977F11247B2A9E0033E281 /* SelfConfigureCell.swift */; };
 		5A977F15247B2D680033E281 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A977F14247B2D680033E281 /* SectionHeader.swift */; };
-		5A977F19247C25410033E281 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A977F16247C25410033E281 /* users.json */; };
-		5A977F1A247C25410033E281 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A977F17247C25410033E281 /* activeChats.json */; };
-		5A977F1B247C25410033E281 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A977F18247C25410033E281 /* waitingChats.json */; };
 		5A977F1E247C77930033E281 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A977F1D247C77920033E281 /* MUser.swift */; };
 		5A977F20247C77A40033E281 /* MChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A977F1F247C77A40033E281 /* MChat.swift */; };
 		5AA350FE247DD2D0000BCA39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AA350FD247DD2D0000BCA39 /* GoogleService-Info.plist */; };
@@ -41,6 +38,12 @@
 		5AA35105247F120B000BCA39 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA35104247F120B000BCA39 /* AuthError.swift */; };
 		5AB1C906247452B6003D3221 /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1C905247452B6003D3221 /* OneLineTextField.swift */; };
 		5AD19ADC2483D66C00A4F780 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD19ADB2483D66C00A4F780 /* StackView + Extension.swift */; };
+		5AD19ADE24856A4800A4F780 /* UIApplication + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD19ADD24856A4800A4F780 /* UIApplication + Extension.swift */; };
+		5AD19AE02486A1EF00A4F780 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD19ADF2486A1EF00A4F780 /* StorageService.swift */; };
+		5AD19AE22486A4E800A4F780 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD19AE12486A4E800A4F780 /* UIImage + Extension.swift */; };
+		5AD19AE62486C44E00A4F780 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AD19AE32486C44200A4F780 /* users.json */; };
+		5AD19AE72486C44E00A4F780 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AD19AE42486C44600A4F780 /* activeChats.json */; };
+		5AD19AE82486C44E00A4F780 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AD19AE52486C44E00A4F780 /* waitingChats.json */; };
 		5AD6B631247D0CC80090C8EB /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6B630247D0CC80090C8EB /* UserCell.swift */; };
 		5AD6B633247D0F420090C8EB /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6B632247D0F420090C8EB /* UIViewController + Extension.swift */; };
 		5AD81FB624732B9000135511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD81FB524732B9000135511 /* AppDelegate.swift */; };
@@ -81,9 +84,6 @@
 		5A977F0F247B29A50033E281 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		5A977F11247B2A9E0033E281 /* SelfConfigureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfigureCell.swift; sourceTree = "<group>"; };
 		5A977F14247B2D680033E281 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
-		5A977F16247C25410033E281 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
-		5A977F17247C25410033E281 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
-		5A977F18247C25410033E281 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		5A977F1D247C77920033E281 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		5A977F1F247C77A40033E281 /* MChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MChat.swift; sourceTree = "<group>"; };
 		5AA350FD247DD2D0000BCA39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -92,6 +92,12 @@
 		5AA35104247F120B000BCA39 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		5AB1C905247452B6003D3221 /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		5AD19ADB2483D66C00A4F780 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
+		5AD19ADD24856A4800A4F780 /* UIApplication + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Extension.swift"; sourceTree = "<group>"; };
+		5AD19ADF2486A1EF00A4F780 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		5AD19AE12486A4E800A4F780 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
+		5AD19AE32486C44200A4F780 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = users.json; path = "../../../../../Volumes/Seagate Expansion Drive/VideoCourses/[SwiftBook] Программирование на Swift/28. Курс По Мессенджеру IChat/35. Google Authentication/35. урок/IChat/users.json"; sourceTree = "<group>"; };
+		5AD19AE42486C44600A4F780 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
+		5AD19AE52486C44E00A4F780 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		5AD6B630247D0CC80090C8EB /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		5AD6B632247D0F420090C8EB /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		5AD81FB224732B9000135511 /* UzChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UzChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +171,8 @@
 				5A800D4B2475A71100D3F8D0 /* SegmentedControl + Extension.swift */,
 				5AD6B632247D0F420090C8EB /* UIViewController + Extension.swift */,
 				5A888725247DC22800B71C64 /* UIView + Extension.swift */,
+				5AD19ADD24856A4800A4F780 /* UIApplication + Extension.swift */,
+				5AD19AE12486A4E800A4F780 /* UIImage + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -225,6 +233,7 @@
 				5A977F21247C78530033E281 /* Model */,
 				5AA35100247E9725000BCA39 /* AuthService.swift */,
 				5A6B430724826B1C00832CE5 /* FirestoreService.swift */,
+				5AD19ADF2486A1EF00A4F780 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -260,15 +269,15 @@
 		5AD81FB424732B9000135511 /* UzChat */ = {
 			isa = PBXGroup;
 			children = (
+				5AD19AE42486C44600A4F780 /* activeChats.json */,
+				5AD19AE32486C44200A4F780 /* users.json */,
+				5AD19AE52486C44E00A4F780 /* waitingChats.json */,
 				5AD81FB524732B9000135511 /* AppDelegate.swift */,
 				5AD81FB724732B9000135511 /* SceneDelegate.swift */,
 				5AA350FF247E96CE000BCA39 /* Services */,
 				5A800D502476C2C300D3F8D0 /* Controllers */,
 				5A800D4D2475BAB800D3F8D0 /* SignIn&Auth */,
 				5A977F13247B2ABB0033E281 /* Protocols */,
-				5A977F17247C25410033E281 /* activeChats.json */,
-				5A977F16247C25410033E281 /* users.json */,
-				5A977F18247C25410033E281 /* waitingChats.json */,
 				5AA35106247F1486000BCA39 /* Helpers */,
 				5A86E4852473F7D20007D371 /* Extensions */,
 				5AD8F74224733C1E00240716 /* Assets.xcassets */,
@@ -301,6 +310,7 @@
 				5AD81FAF24732B9000135511 /* Frameworks */,
 				5AD81FB024732B9000135511 /* Resources */,
 				AA8049F34AF564119D32CE25 /* [CP] Embed Pods Frameworks */,
+				0F811B3626A47B15808FD770 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -349,9 +359,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A977F1B247C25410033E281 /* waitingChats.json in Resources */,
-				5A977F19247C25410033E281 /* users.json in Resources */,
-				5A977F1A247C25410033E281 /* activeChats.json in Resources */,
+				5AD19AE82486C44E00A4F780 /* waitingChats.json in Resources */,
+				5AD19AE62486C44E00A4F780 /* users.json in Resources */,
+				5AD19AE72486C44E00A4F780 /* activeChats.json in Resources */,
 				5AD8F74324733C1E00240716 /* Assets.xcassets in Resources */,
 				5AD81FC224732B9A00135511 /* LaunchScreen.storyboard in Resources */,
 				5AA350FE247DD2D0000BCA39 /* GoogleService-Info.plist in Resources */,
@@ -361,6 +371,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0F811B3626A47B15808FD770 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UzChat/Pods-UzChat-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UzChat/Pods-UzChat-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzChat/Pods-UzChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6E921DA6B5555F0EEDAC771A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -411,6 +438,7 @@
 				5A800D4F2476C04100D3F8D0 /* ListViewController.swift in Sources */,
 				5AB1C906247452B6003D3221 /* OneLineTextField.swift in Sources */,
 				5A977F15247B2D680033E281 /* SectionHeader.swift in Sources */,
+				5AD19ADE24856A4800A4F780 /* UIApplication + Extension.swift in Sources */,
 				5A977F0E247B0FCA0033E281 /* GradientView.swift in Sources */,
 				5A800D522476C2DF00D3F8D0 /* MainTabBarController.swift in Sources */,
 				5AA35105247F120B000BCA39 /* AuthError.swift in Sources */,
@@ -434,12 +462,14 @@
 				5AD81FB624732B9000135511 /* AppDelegate.swift in Sources */,
 				5A888726247DC22800B71C64 /* UIView + Extension.swift in Sources */,
 				5AD8F74D24734D4900240716 /* UIImageView + Extension.swift in Sources */,
+				5AD19AE02486A1EF00A4F780 /* StorageService.swift in Sources */,
 				5A800D4C2475A71100D3F8D0 /* SegmentedControl + Extension.swift in Sources */,
 				5AD6B631247D0CC80090C8EB /* UserCell.swift in Sources */,
 				5A6B43062481C1A300832CE5 /* AuthNavigatingDelegate.swift in Sources */,
 				5AD6B633247D0F420090C8EB /* UIViewController + Extension.swift in Sources */,
 				5A977F10247B29A50033E281 /* WaitingChatCell.swift in Sources */,
 				5AD8F749247349B200240716 /* UIColor + Extension.swift in Sources */,
+				5AD19AE22486A4E800A4F780 /* UIImage + Extension.swift in Sources */,
 				5AD81FB824732B9000135511 /* SceneDelegate.swift in Sources */,
 				5AD8F7452473452E00240716 /* UIButton + Extension.swift in Sources */,
 				5A800D4624753DCD00D3F8D0 /* LoginViewController.swift in Sources */,
