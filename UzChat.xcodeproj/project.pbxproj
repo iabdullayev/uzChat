@@ -44,6 +44,7 @@
 		5AD19AE62486C44E00A4F780 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AD19AE32486C44200A4F780 /* users.json */; };
 		5AD19AE72486C44E00A4F780 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AD19AE42486C44600A4F780 /* activeChats.json */; };
 		5AD19AE82486C44E00A4F780 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AD19AE52486C44E00A4F780 /* waitingChats.json */; };
+		5AD19AEA24883F9800A4F780 /* ListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD19AE924883F9800A4F780 /* ListenerService.swift */; };
 		5AD6B631247D0CC80090C8EB /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6B630247D0CC80090C8EB /* UserCell.swift */; };
 		5AD6B633247D0F420090C8EB /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6B632247D0F420090C8EB /* UIViewController + Extension.swift */; };
 		5AD81FB624732B9000135511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD81FB524732B9000135511 /* AppDelegate.swift */; };
@@ -98,6 +99,7 @@
 		5AD19AE32486C44200A4F780 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = users.json; path = "../../../../../Volumes/Seagate Expansion Drive/VideoCourses/[SwiftBook] Программирование на Swift/28. Курс По Мессенджеру IChat/35. Google Authentication/35. урок/IChat/users.json"; sourceTree = "<group>"; };
 		5AD19AE42486C44600A4F780 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		5AD19AE52486C44E00A4F780 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
+		5AD19AE924883F9800A4F780 /* ListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerService.swift; sourceTree = "<group>"; };
 		5AD6B630247D0CC80090C8EB /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		5AD6B632247D0F420090C8EB /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		5AD81FB224732B9000135511 /* UzChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UzChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +236,7 @@
 				5AA35100247E9725000BCA39 /* AuthService.swift */,
 				5A6B430724826B1C00832CE5 /* FirestoreService.swift */,
 				5AD19ADF2486A1EF00A4F780 /* StorageService.swift */,
+				5AD19AE924883F9800A4F780 /* ListenerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				5A3B4F312477B8E900C51052 /* Bundle-Decodable.swift in Sources */,
 				5A888728247DC8E200B71C64 /* ChatRequestViewController.swift in Sources */,
 				5A800D48247549F000D3F8D0 /* SetupProfileViewController.swift in Sources */,
+				5AD19AEA24883F9800A4F780 /* ListenerService.swift in Sources */,
 				5AD8F74B24734C9000240716 /* Label + Extension.swift in Sources */,
 				5A86E487247406990007D371 /* ButtonFormView.swift in Sources */,
 				5A800D4A24754C1800D3F8D0 /* AddPhotoView.swift in Sources */,
