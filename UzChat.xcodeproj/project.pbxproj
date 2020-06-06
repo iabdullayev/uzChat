@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		34570E18BFA5AC7D16A241D0 /* Pods_UzChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5971C5560D630326EB828F45 /* Pods_UzChat.framework */; };
+		5A1ED325248B8EF6004C85DE /* MMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1ED324248B8EF5004C85DE /* MMessage.swift */; };
+		5A1ED327248BD092004C85DE /* WaitingChatsNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1ED326248BD091004C85DE /* WaitingChatsNavigation.swift */; };
+		5A1ED329248C417F004C85DE /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1ED328248C417F004C85DE /* ChatsViewController.swift */; };
 		5A3B4F312477B8E900C51052 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B4F302477B8E900C51052 /* Bundle-Decodable.swift */; };
 		5A6B43062481C1A300832CE5 /* AuthNavigatingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B43052481C1A200832CE5 /* AuthNavigatingDelegate.swift */; };
 		5A6B430824826B1C00832CE5 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6B430724826B1C00832CE5 /* FirestoreService.swift */; };
@@ -63,6 +66,9 @@
 		4847B34613D81E059617D066 /* Pods-UzChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzChat.debug.xcconfig"; path = "Target Support Files/Pods-UzChat/Pods-UzChat.debug.xcconfig"; sourceTree = "<group>"; };
 		4B81FF427CCCA25636DE2AA9 /* Pods-UzChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzChat.release.xcconfig"; path = "Target Support Files/Pods-UzChat/Pods-UzChat.release.xcconfig"; sourceTree = "<group>"; };
 		5971C5560D630326EB828F45 /* Pods_UzChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UzChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A1ED324248B8EF5004C85DE /* MMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMessage.swift; sourceTree = "<group>"; };
+		5A1ED326248BD091004C85DE /* WaitingChatsNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatsNavigation.swift; sourceTree = "<group>"; };
+		5A1ED328248C417F004C85DE /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		5A3B4F302477B8E900C51052 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		5A6B43052481C1A200832CE5 /* AuthNavigatingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigatingDelegate.swift; sourceTree = "<group>"; };
 		5A6B430724826B1C00832CE5 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
@@ -155,6 +161,7 @@
 				5A800D532476C36000D3F8D0 /* PeopleViewController.swift */,
 				5A888721247DB2DF00B71C64 /* ProfileViewController.swift */,
 				5A888727247DC8E200B71C64 /* ChatRequestViewController.swift */,
+				5A1ED328248C417F004C85DE /* ChatsViewController.swift */,
 				5A977F1C247C44DC0033E281 /* Header */,
 				5A977F0A247999DD0033E281 /* Cell */,
 			);
@@ -208,6 +215,7 @@
 			children = (
 				5A977F11247B2A9E0033E281 /* SelfConfigureCell.swift */,
 				5A6B43052481C1A200832CE5 /* AuthNavigatingDelegate.swift */,
+				5A1ED326248BD091004C85DE /* WaitingChatsNavigation.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -225,6 +233,7 @@
 			children = (
 				5A977F1D247C77920033E281 /* MUser.swift */,
 				5A977F1F247C77A40033E281 /* MChat.swift */,
+				5A1ED324248B8EF5004C85DE /* MMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -465,6 +474,7 @@
 				5A6B430A2482704500832CE5 /* UserError.swift in Sources */,
 				5AD81FB624732B9000135511 /* AppDelegate.swift in Sources */,
 				5A888726247DC22800B71C64 /* UIView + Extension.swift in Sources */,
+				5A1ED329248C417F004C85DE /* ChatsViewController.swift in Sources */,
 				5AD8F74D24734D4900240716 /* UIImageView + Extension.swift in Sources */,
 				5AD19AE02486A1EF00A4F780 /* StorageService.swift in Sources */,
 				5A800D4C2475A71100D3F8D0 /* SegmentedControl + Extension.swift in Sources */,
@@ -476,9 +486,11 @@
 				5AD19AE22486A4E800A4F780 /* UIImage + Extension.swift in Sources */,
 				5AD81FB824732B9000135511 /* SceneDelegate.swift in Sources */,
 				5AD8F7452473452E00240716 /* UIButton + Extension.swift in Sources */,
+				5A1ED325248B8EF6004C85DE /* MMessage.swift in Sources */,
 				5A800D4624753DCD00D3F8D0 /* LoginViewController.swift in Sources */,
 				5AD19ADC2483D66C00A4F780 /* StackView + Extension.swift in Sources */,
 				5AA35101247E9725000BCA39 /* AuthService.swift in Sources */,
+				5A1ED327248BD092004C85DE /* WaitingChatsNavigation.swift in Sources */,
 				5A977F12247B2A9E0033E281 /* SelfConfigureCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

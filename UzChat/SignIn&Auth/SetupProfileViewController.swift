@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import SDWebImage
 
 class SetupProfileViewController: UIViewController {
     
@@ -16,7 +17,7 @@ class SetupProfileViewController: UIViewController {
     
     let fullNameLabel = UILabel(text: "Full Name")
     let aboutmeLabel = UILabel(text: "About me")
-    let sexLabel = UILabel(text: "Gender")
+    let genderLabel = UILabel(text: "Gender")
     
     let fullNameTextField = OneLineTextField(font: .avenir20())
     let aboutMeTextField = OneLineTextField(font: .avenir20())
@@ -32,6 +33,10 @@ class SetupProfileViewController: UIViewController {
         
         if let username = currentUser.displayName {
             fullNameTextField.text = username
+        }
+        
+        if let photoURL = currentUser.photoURL {
+            fullImageView.circleImageView.sd_setImage(with: photoURL, completed: nil)
         }
     }
     
@@ -96,7 +101,7 @@ extension SetupProfileViewController {
              axis: .vertical,
              spacing: 0)
         let genderStackView = UIStackView(arrangedSubviews:
-            [sexLabel,
+            [genderLabel,
              genderSegmentedControl],
              axis: .vertical,
              spacing: 12)

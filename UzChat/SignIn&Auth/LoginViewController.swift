@@ -102,7 +102,7 @@ extension LoginViewController {
             emailStackView,
             passwordStackView,
             loginButton],
-            axis: .vertical, spacing: 40)
+            axis: .vertical, spacing: 20)
         let bottomStackView = UIStackView(arrangedSubviews: [needAnAccountLabel,
                                                              signUpButton],
                                                             axis: .horizontal, spacing: 10)

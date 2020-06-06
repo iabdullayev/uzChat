@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class UserCell: UICollectionViewCell, SelfConfiguringCell {
     
     let userImageView = UIImageView()
-    let userName = UILabel(text: "text", font: .laoSangamMN20())
+    let userName = UILabel(text: "Iskandar", font: .laoSangamMN20())
     let containerView = UIView()
+    
     
     static var reuseId: String = "UserCell"
     
@@ -36,10 +38,15 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell {
         self.containerView.clipsToBounds = true
     }
     
-    func configure<U>(with value: U) where U: Hashable {
+    override func prepareForReuse() {
+        userImageView.image = nil
+    }
+    
+    func configure<U>(with value: U) where U : Hashable {
         guard let user: MUser = value as? MUser else { return }
-        userImageView.image = UIImage(named: user.avatarStringURL)
         userName.text = user.username
+        guard let url = URL(string: user.avatarStringURL) else { return }
+        userImageView.sd_setImage(with: url, completed: nil)
     }
     
     private func setupConstraints() {
@@ -73,13 +80,11 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell {
             userName.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         ])
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
-
 // MARK: - SwiftUI
 
 import SwiftUI
